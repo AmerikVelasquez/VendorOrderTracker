@@ -45,5 +45,14 @@ namespace VendorOrderTracker.Tests
       List<Vendor> result = Vendor.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAllMethod_ReturnsVendors_VendorList()
+    {
+      Vendor testVendor = new Vendor("Aunt May", "SpiderMan's favorite place to eat");
+      List<Vendor> newList = new List<Vendor> {testVendor};
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
