@@ -32,5 +32,14 @@ namespace VendorOrderTracker.Tests
       string result = testOrder.Description;
       Assert.AreEqual(description, result);
     }
+
+    [TestMethod]
+    public void OrderConstructor_CreatesObjectWithPrice_String()
+    {
+      int price = 30;
+      Order testOrder = new Order("title", "an order", price ,16);
+      int result = testOrder.Price;
+      Assert.AreEqual(price, result);
+    }
   }
 }
