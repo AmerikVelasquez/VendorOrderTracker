@@ -34,12 +34,21 @@ namespace VendorOrderTracker.Tests
     }
 
     [TestMethod]
-    public void OrderConstructor_CreatesObjectWithPrice_String()
+    public void OrderConstructor_CreatesObjectWithPrice_Int()
     {
       int price = 30;
       Order testOrder = new Order("title", "an order", price ,16);
       int result = testOrder.Price;
       Assert.AreEqual(price, result);
+    }
+
+    [TestMethod]
+    public void OrderConstructor_CreatesObjectWithDate_Int()
+    {
+      int date = 16;
+      Order testOrder = new Order("title", "an order", 30 ,date);
+      int result = testOrder.Date;
+      Assert.AreEqual(date, result);
     }
   }
 }
