@@ -64,5 +64,14 @@ namespace VendorOrderTracker.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(testList, result);
     }
+
+    [TestMethod]
+    public void GetAllMethod_ReturnOrders_OrderList()
+    {
+      Order testOrder = new Order("title", "things to do", 30, 16);
+      List<Order> testList = new List<Order> {testOrder};
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(testList, result);
+    }
   }
 }
