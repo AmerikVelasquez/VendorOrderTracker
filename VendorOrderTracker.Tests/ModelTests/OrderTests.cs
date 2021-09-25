@@ -23,5 +23,14 @@ namespace VendorOrderTracker.Tests
       string result = testOrder.Title;
       Assert.AreEqual(title, result);
     }
+
+    [TestMethod]
+    public void OrderConstructor_CreatesObjectWithDescription_String()
+    {
+      string description = "an order";
+      Order testOrder = new Order("title", description, 30 ,16);
+      string result = testOrder.Description;
+      Assert.AreEqual(description, result);
+    }
   }
 }
