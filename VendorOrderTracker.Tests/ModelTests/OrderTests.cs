@@ -6,8 +6,14 @@ using System;
 namespace VendorOrderTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests :IDisposable
   {
+
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -49,6 +55,14 @@ namespace VendorOrderTracker.Tests
       Order testOrder = new Order("title", "an order", 30 ,date);
       int result = testOrder.Date;
       Assert.AreEqual(date, result);
+    }
+
+    [TestMethod]
+    public void GetAllMethod_ShowsEmptyList_OrderList()
+    {
+      List<Order> testList = new List<Order> {};
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(testList, result);
     }
   }
 }
