@@ -1,0 +1,22 @@
+@using VendorOrderTracker.Models;
+
+<h1>Vendor Order Tracker</h1>
+@if(Model.Count == 0)
+{
+  <p>There are no orders in the list.</p>
+}
+
+<h4>Your Orders:</h4>
+<ul>
+  @foreach(Order order in Model)
+  {
+    <li>@order.Title, @order.Description, @order.Price $, @order.Date</li>
+  }
+</ul>
+
+<a href="/orders/new">Add a new order.</a>
+<a href="/vendors">Back to your vendors</a>
+
+<form action="/orders/delete" method="post">
+  <button type="submit" name="button">Clear All Orders</button>
+</form>
